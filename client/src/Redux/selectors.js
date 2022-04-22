@@ -1,2 +1,2 @@
 export const getCurrentTickers = (state) => state.tickers.currentTrade;
-export const getLastTickers = (state) => state.tickers.lastTrade;
+export const getPastTickers = (state) => state.tickers.pastTrade;
