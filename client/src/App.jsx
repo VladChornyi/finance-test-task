@@ -1,10 +1,12 @@
-import "./App.css";
-import io from "socket.io-client";
-import Header from "./Components/Header";
-import TickersList from "./Components/TickersList";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+
+import io from "socket.io-client";
+
 import { getTickers } from "./Redux/tickers/tickersSlice";
+
+import Layout from "./Components/Layout";
+import Auction from "./Components/Auction";
 
 const socket = io("http://localhost:4000/");
 socket.emit("start");
@@ -19,14 +21,13 @@ function App() {
     return () => {
       socket.disconnect();
     };
-  }, [socket]);
+  }, [dispatch]);
 
   return (
     <>
-      <Header />
-      <main>
-        <TickersList />
-      </main>
+      <Layout>
+        <Auction />
+      </Layout>
     </>
   );
 }
