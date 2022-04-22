@@ -1,5 +1,13 @@
+import { HeaderStyled } from "./Header.styled";
+
 const Header = () => {
-  return <header>This is BIRZHA</header>;
+  return (
+    <HeaderStyled>
+      <div className="container">
+        <h1 className="title">This is BIRZHA</h1>
+      </div>
+    </HeaderStyled>
+  );
 };
 
 export default Header;
