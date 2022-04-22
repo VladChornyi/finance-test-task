@@ -6,7 +6,7 @@ export const tickersSlice = createSlice({
   reducers: {
     getTickers(state, action) {
       return {
-        lastTrade: [...state.currentTrade],
+        pastTrade: [...state.currentTrade],
         currentTrade: [...action.payload],
       };
     },
