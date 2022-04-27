@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 
 import io from "socket.io-client";
 
+import { useDispatch } from "./Redux/redux-hooks";
 import { getTickers } from "./Redux/tickers/tickersSlice";
 
 import Layout from "./Components/Layout";

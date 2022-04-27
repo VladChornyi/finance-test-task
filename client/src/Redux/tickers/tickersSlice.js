@@ -13,3 +13,4 @@ export const tickersSlice = createSlice({
   },
 });
 export const { getTickers } = tickersSlice.actions;
+export default tickersSlice.reducer;

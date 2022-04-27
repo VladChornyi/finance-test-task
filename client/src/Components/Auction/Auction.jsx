@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 import { Wrapper } from "./Auction.styled";
 import "antd/dist/antd.css";
 
@@ -10,10 +8,12 @@ import { getCurrentTickers, getPastTickers } from "../../Redux/selectors";
 
 import Chart from "../Chart";
 import { columns } from "./columns";
+import { useSelector } from "../../Redux/redux-hooks";
 
 const Auction = () => {
   const currentTrade = useSelector(getCurrentTickers);
   const pastTrade = useSelector(getPastTickers);
+
   const data = currentTrade.map(
     ({
       ticker,
