@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 
 import App from "./App";
-import { useSelector } from "./Redux/redux-hooks";
+import { useDispatch, useSelector } from "./Redux/redux-hooks";
 import { testUseAppSelector } from "./Redux/test-app-selector";
 
 window.matchMedia =
@@ -28,8 +28,13 @@ describe("App", () => {
 
   it("renders This is BIRZHA", () => {
     render(<App />);
-    const linkElement = screen.getByText(/This is BIRZHA/i);
-    expect(linkElement).toBeInTheDocument();
+    const title = screen.getByText(/This is BIRZHA/i);
+    expect(title).toBeInTheDocument();
     screen.debug();
+  });
+
+  it("should calls dispatch", () => {
+    render(<App />);
+    expect(useDispatch).toBeCalled();
   });
 });
